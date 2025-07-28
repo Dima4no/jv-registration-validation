@@ -1,10 +1,10 @@
 package core.basesyntax;
 
-import core.basesyntax.dao.StorageDaoImpl;
 import core.basesyntax.model.User;
 import core.basesyntax.service.InvalidDataException;
 import core.basesyntax.service.RegistrationServiceImpl;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -60,11 +60,9 @@ public class RegistrationServiceTest {
     @Test
     public void testLogin_IfUserWithGivenLoginExists_NotOk() {
         User user = new User("qwerty23", "poty3456", 21);
-        User user1 = new User("lowysh432", "portugal1283", 45);
-        User user2 = new User("qwerty23", "poty3456", 21);
+        User user1 = new User("qwerty23", "portugal1283", 45);
         RegistrationServiceImpl registrationService = new RegistrationServiceImpl();
         registrationService.register(user1);
-        registrationService.register(user2);
         assertThrows(InvalidDataException.class, () -> registrationService.register(user));
     }
 
