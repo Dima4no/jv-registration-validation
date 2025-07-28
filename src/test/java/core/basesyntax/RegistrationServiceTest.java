@@ -3,6 +3,7 @@ package core.basesyntax;
 import core.basesyntax.model.User;
 import core.basesyntax.service.InvalidDataException;
 import core.basesyntax.service.RegistrationServiceImpl;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
